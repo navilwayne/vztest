@@ -1,2 +1,2 @@
-language :csharp
-solution:WcfService1
+language: csharp
+solution: WcfService1.sln
