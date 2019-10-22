@@ -1,0 +1,19 @@
+Sol 1 :
+var i = 0;
+var myfunc = setInterval(function(){
+    i = i + 1;
+    console.log('Hello World at '+ 4*i + ' seconds'); 
+}, 2000)
+
+-----------------------------------------------------------
+
+Sol 2 :
+var myfunc = setInterval(function(){
+    i = i + 1;
+    console.log('Hello World'); 
+    if(i==5) {
+         console.log('Done'); 
+ clearInterval(myfunc);
+process.exit(0);
+    }
+}, 1000);
