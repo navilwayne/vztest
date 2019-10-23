@@ -1,0 +1,31 @@
+Sol 1 :
+As Node architecture is single-threaded and asynchronous, the community devised the callback functions, which would fire (or run) after the first function (to which the callbacks were assigned) run is completed.
+app.get('/', function(){
+ function1(arg1, function(){
+   ...
+})
+});
+The problem with this kind of code is that this kind of situations can cause a lot of trouble and the code can get messy when there are several functions. This situation is called what is commonly known as a callback hell.
+So, to find a way out, the idea of Promises and function chaining was introduced.
+
+Example: Before async/await
+function fun1(req, res){
+  return request.get('http://localhost:3000')
+   .catch((err) =>{
+     console.log('found error');
+}).then((res) =>{
+   console.log('get request returned.');
+});
+
+With Node v8, the async/await feature was officially rolled out by the Node to deal with Promises and function chaining. 
+
+Example :
+async function fun1(req, res){
+  let response = await request.get('http://localhost:3000');
+    if (response.err) { console.log('error');}
+    else { console.log('fetched response');
+}
+
+Sol 2 :
+var words = [ 'Laptop','bus' , 'Parking', 13 ,'453']; 
+words.map(w=>w.length);
